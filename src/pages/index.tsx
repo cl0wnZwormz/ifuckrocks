@@ -16,7 +16,6 @@ declare global {
   }
 }
 
-// Create a client-side only Turnstile component
 const TurnstileWidget = dynamic(() => Promise.resolve(({ onVerify }: { onVerify: (token: string) => void }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isVerified, setIsVerified] = useState(false);
@@ -84,7 +83,7 @@ interface UploadedFile {
   errorMessage?: string;
 }
 
-const MAX_FILE_SIZE = 200 * 1024 * 1024; // 200MB in bytes
+const MAX_FILE_SIZE = 200 * 1024 * 1024; // 200mb in bytes
 
 const descriptions: string[] = [
   "Rock-solid file sharing",

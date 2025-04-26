@@ -111,7 +111,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       try {
         await fsPromises.unlink(file.filepath);
       } catch {
-        // Continue even if we can't delete the temp file
+        // continue even if temp file deletion fails
       }
 
       const url = `${process.env.R2_PUBLIC_URL}/${key}`;

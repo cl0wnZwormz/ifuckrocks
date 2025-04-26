@@ -7,10 +7,8 @@ interface RateLimitStore {
   };
 }
 
-// In-memory store for rate limiting
 const store: RateLimitStore = {};
 
-// Clean up expired entries every minute
 setInterval(() => {
   const now = Date.now();
   Object.keys(store).forEach(key => {
@@ -20,7 +18,6 @@ setInterval(() => {
   });
 }, 60000);
 
-// Rock-themed rate limit error messages
 const rateLimitMessages = [
   "You've hit rock bottom with your upload rate!",
   "Your upload frequency is off the Richter scale!",
