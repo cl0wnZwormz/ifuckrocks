@@ -346,6 +346,7 @@ export default function Home() {
           <p>Supported formats: All files welcome</p>
           <p>Maximum file size: 200MB</p>
           <p>Copyright 2025 ifuckrocks</p>
+          <p>The site is funded only by donations</p>
           <p>
             Made with <span>❤️</span> by{' '}
             <a 
