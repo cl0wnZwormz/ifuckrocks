@@ -232,7 +232,7 @@ export default function Home() {
     script.src = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
     script.async = true;
     script.onload = () => {
-      // @ts-ignore
+      // @ts-expect-error - Ko-fi widget is loaded dynamically
       window.kofiWidgetOverlay.draw('ifrocks', {
         'type': 'floating-chat',
         'floating-chat.donateButton.text': 'Support Us',
