@@ -226,6 +226,27 @@ export default function Home() {
     setTurnstileToken(token);
   };
 
+  useEffect(() => {
+    // Load Ko-fi script
+    const script = document.createElement('script');
+    script.src = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
+    script.async = true;
+    script.onload = () => {
+      // @ts-ignore
+      window.kofiWidgetOverlay.draw('ifrocks', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support Us',
+        'floating-chat.donateButton.background-color': '#323842',
+        'floating-chat.donateButton.text-color': '#fff'
+      });
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
